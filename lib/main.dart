@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'core/services/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
-}
-
-Future<void> _launchURL(String url) async {
-  final Uri uri = Uri.parse(url);
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-    throw 'Não foi possível abrir $url';
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -215,7 +208,7 @@ class WantedScreen extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => _launchURL("mailto:djalmahy@hotmail.com"),
+                    onTap: () => launchURL("mailto:djalmahy@hotmail.com"),
                     child: Row(
                       children: const [
                         Icon(Icons.email, color: Colors.white54, size: 16),
@@ -235,7 +228,7 @@ class WantedScreen extends StatelessWidget {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () => _launchURL("https://wa.me/5547996700158"),
+                    onTap: () => launchURL("https://wa.me/5547996700158"),
                     child: Row(
                       children: const [
                         Icon(Icons.phone, color: Colors.white54, size: 16),
@@ -259,13 +252,13 @@ class WantedScreen extends StatelessWidget {
                     size: 18,
                   ),
                   onPressed: () =>
-                      _launchURL("https://linkedin.com/in/seuusuario"),
+                      launchURL("https://linkedin.com/in/seuusuario"),
                 ),
 
                 // GITHUB
                 IconButton(
                   icon: const Icon(FontAwesomeIcons.github),
-                  onPressed: () => _launchURL("https://github.com/seuusuario"),
+                  onPressed: () => launchURL("https://github.com/seuusuario"),
                 ),
               ],
             ),
