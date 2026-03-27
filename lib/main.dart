@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'core/services/url_launcher.dart';
+import 'features/wanted/widgets/wanted_header.dart';
+import 'features/wanted/widgets/wanted_portrait.dart';
+import 'features/wanted/widgets/wanted_info.dart';
+import 'features/wanted/widgets/wanted_level.dart';
+import 'features/wanted/widgets/wanted_reward.dart';
+import 'features/wanted/widgets/wanted_alert.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,134 +58,17 @@ class WantedScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               /// WANTED TITLE
-              Column(
-                children: const [
-                  Text(
-                    "WANTED",
-                    style: TextStyle(
-                      color: Color(0xffffd400),
-                      fontSize: 44,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 6,
-                      shadows: [Shadow(color: Colors.orange, blurRadius: 15)],
-                    ),
-                  ),
-
-                  Text(
-                    "DEAD OR ALIVE",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      letterSpacing: 5,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-
+              WantedHeader(),
               /// IMAGE
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.cyanAccent, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.cyanAccent.withOpacity(0.4),
-                      blurRadius: 15,
-                    ),
-                  ],
-                ),
-                child: Image.asset(
-                  'djalma.jpg',
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
-              ),
-
-              Column(
-                children: const [
-                  /// NAME
-                  Text(
-                    "DJALMA HIDEKI YAMAMOTO",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      letterSpacing: 3,
-                    ),
-                  ),
-
-                  // TITLE
-                  Text(
-                    "MILITECH SPECIAL FORCES",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white54,
-                      fontSize: 14,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-
+              WantedPortrait(),
+              /// INFO
+              WantedInfo(),
               /// THREAT LEVEL
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "THREAT LEVEL:",
-                    style: TextStyle(
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  Text(
-                    "HIGH",
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-
+              WantedLevel(),
               /// REWARD
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellowAccent, width: 2),
-                  color: Colors.black,
-                ),
-                child: const Text(
-                  "REWARD 500,000 €\$",
-                  style: TextStyle(
-                    fontSize: 28,
-                    color: Colors.yellowAccent,
-                    fontWeight: FontWeight.bold,
-                    shadows: [Shadow(color: Colors.orange, blurRadius: 10)],
-                  ),
-                ),
-              ),
-
-              Column(
-                children: const [
-                  /// WARNING
-                  Text(
-                    "ARMED & EXTREMELY DANGEROUS",
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                      fontSize: 16,
-                      letterSpacing: 2,
-                    ),
-                  ),
-
-                  Icon(
-                    Icons.warning_amber_rounded,
-                    color: Colors.redAccent,
-                    size: 48,
-                  ),
-                ],
-              ),
+              WantedReward(),
+              /// ALERT
+              WantedAlert(),
             ],
           ),
         ),
