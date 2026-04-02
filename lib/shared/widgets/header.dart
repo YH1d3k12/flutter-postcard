@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../routes/app_routes.dart'; // import para AppRoutes
 
 class AppHeader extends StatelessWidget {
   final String? currentPage;
@@ -30,37 +31,49 @@ class AppHeader extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      "NCPD ARCHIVES",
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        color: Colors.cyanAccent,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 2,
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            AppRoutes.home,
+                            (route) => false,
+                          );
+                        },
+                        child: Text(
+                          "NCPD ARCHIVES",
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                            color: Colors.cyanAccent,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 2,
+                          ),
+                        ),
                       ),
                     ),
+
                     if (currentPage != null) ...[
                       const SizedBox(width: 8),
-                      const Icon(Icons.arrow_forward_ios, size: 12, color: Colors.cyanAccent),
+                      const Icon(
+                        Icons.arrow_forward_ios,
+                        size: 12,
+                        color: Colors.cyanAccent,
+                      ),
                       const SizedBox(width: 8),
                       Text(
                         currentPage!,
                         textAlign: TextAlign.left,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2,
                         ),
                       ),
-                    ],                    
+                    ],
                   ],
-                ),
-
-                Text(
-                  "Night City Police Department",
-                  style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),
