@@ -12,8 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    // Ajusta o número de colunas de acordo com a largura da tela
-    int crossAxisCount = 2; // padrão
+    int crossAxisCount = 2;
     if (screenWidth > 1200) {
       crossAxisCount = 4;
     } else if (screenWidth > 800) {
@@ -28,7 +27,6 @@ class HomeScreen extends StatelessWidget {
           const AppHeader(currentPage: "HOME"),
           const SizedBox(height: 20),
 
-          // Cabeçalho com título e nome do usuário
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -65,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisCount: crossAxisCount,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
-                childAspectRatio: 1, // garante que os cards sejam quadrados
+                childAspectRatio: 1,
                 children: [
                   HomeCard(icon: Icons.folder, title: "Casos Recentes", route: "/"),
                   HomeCard(icon: Icons.person_search, title: "Suspeitos", route: "/wanted"),
