@@ -35,7 +35,7 @@ class AppHeader extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: const TextStyle(
                         color: Colors.cyanAccent,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 2,
                       ),
@@ -49,7 +49,7 @@ class AppHeader extends StatelessWidget {
                         textAlign: TextAlign.left,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2,
                         ),
@@ -60,7 +60,7 @@ class AppHeader extends StatelessWidget {
 
                 Text(
                   "Night City Police Department",
-                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                  style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),

@@ -15,13 +15,11 @@ class WantedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff0d0d0f),
-
       body: Column(
         children: [
           const AppHeader(
             currentPage: "WANTED DATABASE"
           ),
-
           Expanded(
             child: Center(
               child: Container(
