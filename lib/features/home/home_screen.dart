@@ -67,10 +67,10 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 16,
                 childAspectRatio: 1, // garante que os cards sejam quadrados
                 children: [
-                  HomeCard(icon: Icons.folder, title: "Casos Recentes"),
-                  HomeCard(icon: Icons.person_search, title: "Suspeitos"),
-                  HomeCard(icon: Icons.report, title: "Relatórios"),
-                  HomeCard(icon: Icons.settings, title: "Configurações"),
+                  HomeCard(icon: Icons.folder, title: "Casos Recentes", route: "/"),
+                  HomeCard(icon: Icons.person_search, title: "Suspeitos", route: "/wanted"),
+                  HomeCard(icon: Icons.report, title: "Relatórios", route: "/"),
+                  HomeCard(icon: Icons.settings, title: "Configurações", route: "/"),
                 ],
               ),
             ),
