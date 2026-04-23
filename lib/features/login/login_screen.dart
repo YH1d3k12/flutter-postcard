@@ -94,7 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             _formKey.currentState!.save();
                             Navigator.pushNamedAndRemoveUntil(
                               context,
-                              AppRoutes.home,
+                              "/boot",
+                              arguments: AppRoutes.home,
                               (route) => false,
                             );
                           }
